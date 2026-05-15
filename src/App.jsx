@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import quizData from './data/quizData';
+import ModuleSelectionScreen from './components/ModuleSelectionScreen';
 import HomeScreen from './components/HomeScreen';
 import QuizScreen from './components/QuizScreen';
 import ResultScreen from './components/ResultScreen';
@@ -16,7 +17,7 @@ function shuffle(arr) {
 }
 
 export default function App() {
-  const [screen, setScreen] = useState('home'); // 'home' | 'quiz' | 'result'
+  const [screen, setScreen] = useState('modules'); // 'modules' | 'home' | 'quiz' | 'result'
   const [activeModule, setActiveModule] = useState(null);
   const [activeCourse, setActiveCourse] = useState(null);
   const [questionCount, setQuestionCount] = useState(10);
@@ -24,6 +25,11 @@ export default function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
+
+  function handleSelectModule(module) {
+    setActiveModule(module);
+    setScreen('home');
+  }
 
   function handleStart(module, course, count) {
     const shuffled = shuffle(course.questions).slice(0, count);
@@ -63,10 +69,14 @@ export default function App() {
     setScreen('quiz');
   }
 
-  function handleBack() {
-    setScreen('home');
+  function handleBackToModules() {
+    setScreen('modules');
     setActiveModule(null);
     setActiveCourse(null);
+  }
+
+  function handleBackToHome() {
+    setScreen('home');
     setQuestions([]);
     setCurrentIndex(0);
     setSelectedAnswer(null);
@@ -75,8 +85,16 @@ export default function App() {
 
   return (
     <div className="app">
-      {screen === 'home' && (
-        <HomeScreen quizData={quizData} onStart={handleStart} />
+      {screen === 'modules' && (
+        <ModuleSelectionScreen quizData={quizData} onSelectModule={handleSelectModule} />
+      )}
+
+      {screen === 'home' && activeModule && (
+        <HomeScreen 
+          module={activeModule} 
+          onStart={handleStart} 
+          onBack={handleBackToModules} 
+        />
       )}
 
       {screen === 'quiz' && (
@@ -95,7 +113,7 @@ export default function App() {
           score={score}
           total={questions.length}
           onRetry={handleRetry}
-          onBack={handleBack}
+          onBack={handleBackToHome}
         />
       )}
     </div>

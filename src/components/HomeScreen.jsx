@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
-export default function HomeScreen({ quizData, onStart }) {
+export default function HomeScreen({ module, onStart, onBack }) {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [questionCount, setQuestionCount] = useState(10);
 
-  const module = quizData.modules[0];
   const maxQuestions = selectedCourse ? selectedCourse.questions.length : 0;
   const MIN = 5;
 
@@ -27,8 +26,15 @@ export default function HomeScreen({ quizData, onStart }) {
 
   return (
     <div className="container">
+      <button 
+        className="btn-text" 
+        onClick={onBack}
+        style={{ marginBottom: 16 }}
+      >
+        ← Retour aux modules
+      </button>
       <div className="home-header">
-        <p className="module-label">Module</p>
+        <p className="module-label">Module sélectionné</p>
         <h1>{module.name}</h1>
         <p style={{ marginTop: 6 }}>Choisissez un cours et lancez votre quiz.</p>
       </div>

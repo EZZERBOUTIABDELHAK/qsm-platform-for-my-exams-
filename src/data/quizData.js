@@ -1,19 +1,9 @@
 import questions from './questions.js';
+import itilQuestions from './ITIL.js';
 
 /**
  * Module 1 — Web Services & SOA (200 questions)
- *
- * Section boundaries in questions.js (0-indexed):
- *   q1  –  q10  → [0  – 9]   Concepts de base (10)
- *   q11 –  q18  → [10 – 17]  Implémentation   (8)
- *   q19 –  q40  → [18 – 39]  WSDL             (22)
- *   q41 –  q55  → [40 – 54]  SOAP             (15)
- *   q56 –  q74  → [55 – 73]  UDDI + Standards  (19)
- *   q75 –  q85  → [74 – 84]  JAX-WS           (11)
- *   q86 –  q91  → [85 – 90]  JAXB             (6)
- *   q92 –  q96  → [91 – 95]  Création client  (5)
- *   q97 –  q115 → [96 – 114] Approfondissement(19)
- *   q116 – q200 → [115 – 199] Révision complète(85)
+ * ...
  */
 
 const quizData = {
@@ -51,6 +41,18 @@ const quizData = {
           name: 'Approfondissement & Révision',
           description: 'Questions transversales, scénarios pratiques, récapitulation complète',
           questions: questions.slice(115),     // q116 – q200 (85 questions)
+        },
+      ],
+    },
+    {
+      id: 'm2',
+      name: 'Module 2 — ITIL',
+      courses: [
+        {
+          id: 'itil-c1',
+          name: 'ITIL Foundations & Lifecycle',
+          description: 'Introduction aux concepts ITIL, cycle de vie des services, processus et fonctions',
+          questions: itilQuestions,
         },
       ],
     },
