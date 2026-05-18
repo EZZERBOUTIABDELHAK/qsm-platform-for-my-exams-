@@ -1,9 +1,11 @@
 import questions from './questions.js';
 import itilQuestions from './ITIL.js';
+import soaQuestions from './soa.js';
 
 /**
  * Module 1 — Web Services & SOA (200 questions)
- * ...
+ * Module 2 — ITIL
+ * Module 3 — Architecture & Conception SOA (200 questions)
  */
 
 const quizData = {
@@ -53,6 +55,42 @@ const quizData = {
           name: 'ITIL Foundations & Lifecycle',
           description: 'Introduction aux concepts ITIL, cycle de vie des services, processus et fonctions',
           questions: itilQuestions,
+        },
+      ],
+    },
+    {
+      id: 'm3',
+      name: 'Module 3 — Architecture & Conception SOA',
+      courses: [
+        {
+          id: 'soa-c1',
+          name: '1. Urbanisation des SI & Modèle Client-Serveur',
+          description: 'État des lieux des SI, silos applicatifs, couches détaillées et architectures 1-tier à n-tiers',
+          questions: soaQuestions.slice(0, 30), // q1 – q30 (30 questions)
+        },
+        {
+          id: 'soa-c2',
+          name: '2. Composants Distribués & Gestion des Flux',
+          description: 'Composants (JavaBeans, CORBA, RMI, RPC, ORB) et flux (synchrone/asynchrone, EDI, ETL, pub-sub)',
+          questions: soaQuestions.slice(30, 55), // q31 – q55 (25 questions)
+        },
+        {
+          id: 'soa-c3',
+          name: '3. Principes, Bénéfices & Risques de la SOA',
+          description: 'Cible SOA, découplage technologique, bénéfices métier/IT, risques et craintes liés à la mutualisation',
+          questions: soaQuestions.slice(55, 90), // q56 – q90 (35 questions)
+        },
+        {
+          id: 'soa-c4',
+          name: '4. Synthèse & Approfondissement de l\'Architecture',
+          description: 'Questions transversales, analyse comparative, architecture d\'entreprise et scénarios d\'intégration',
+          questions: soaQuestions.slice(90, 130), // q91 – q130 (40 questions)
+        },
+        {
+          id: 'soa-c5',
+          name: '5. Consolidation & Niveau Expert',
+          description: 'Série finale de consolidation, questions de synthèse complexes et niveau expert',
+          questions: soaQuestions.slice(130, 200), // q131 – q200 (70 questions)
         },
       ],
     },
