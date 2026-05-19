@@ -1,16 +1,42 @@
-# React + Vite
+# QSM Platform for Exams 🎓
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur la plateforme QSM ! Cette application React/Vite est conçue pour réviser et s'entraîner aux examens à travers des modules interactifs (SOA, ITIL, etc.). 
 
-Currently, two official plugins are available:
+## 🚀 Comment lancer le projet localement ?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Suivez ces étapes simples pour faire tourner l'application sur votre machine.
 
-## React Compiler
+### 📋 Prérequis
+Assurez-vous d'avoir installé [Node.js](https://nodejs.org/) (qui inclut `npm`) sur votre ordinateur. La version LTS est recommandée.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🛠️ Installation et exécution
 
-## Expanding the ESLint configuration
+1. **Cloner le dépôt** (si ce n'est pas déjà fait) :
+   ```bash
+   git clone https://github.com/EZZERBOUTIABDELHAK/qsm-platform-for-my-exams-.git
+   cd qsm-platform-for-my-exams-
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Installer les dépendances** :
+   Dans le terminal, exécutez la commande suivante à la racine du projet :
+   ```bash
+   npm install
+   ```
+
+3. **Lancer le serveur de développement** :
+   Une fois l'installation terminée, démarrez l'application avec la commande :
+   ```bash
+   npm run dev
+   ```
+
+4. **Ouvrir l'application** :
+   Le terminal affichera un lien local (généralement `http://localhost:5173/`). Cliquez dessus (ou maintenez la touche `Ctrl` enfoncée et cliquez) ou copiez-collez l'URL dans votre navigateur web pour accéder à la plateforme.
+
+---
+
+## 📁 Structure du projet & Examens
+Les questions et données des modules sont organisées dans le dossier `src/data/`. 
+- Vous y trouverez les modules pour **SOA** et **ITIL**.
+- Le module **ITIL Exams** contient 5 séries complètes de questions pour une préparation optimale.
+
+*Bonnes révisions !* 📚
