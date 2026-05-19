@@ -1,6 +1,10 @@
 import questions from './questions.js';
 import itilQuestions from './ITIL.js';
 import soaQuestions from './soa.js';
+import exam1 from './ITILexams/examen1.js';
+import exam2 from './ITILexams/examen2.js';
+import exam3 from './ITILexams/examen3.js';
+import exam4 from './ITILexams/examen4.js';
 
 /**
  * Module 1 — Web Services & SOA (200 questions)
@@ -91,6 +95,42 @@ const quizData = {
           name: '5. Consolidation & Niveau Expert',
           description: 'Série finale de consolidation, questions de synthèse complexes et niveau expert',
           questions: soaQuestions.slice(130, 200), // q131 – q200 (70 questions)
+        },
+      ],
+    },
+    {
+      id: 'itilexams',
+      name: 'Module 4 — ITIL Exams',
+      courses: [
+        {
+          id: 'exam1a',
+          name: 'Examen 1 - Sample A',
+          description: 'Questions ITIL de l\'examen 1, partie A',
+          questions: exam1.slice(0, 40),
+        },
+        {
+          id: 'exam1b',
+          name: 'Examen 1 - Sample B',
+          description: 'Questions ITIL de l\'examen 1, partie B',
+          questions: exam1.slice(40),
+        },
+        {
+          id: 'exam2',
+          name: 'Examen 2',
+          description: 'Questions ITIL de l\'examen 2',
+          questions: exam2,
+        },
+        {
+          id: 'exam3',
+          name: 'Examen 3',
+          description: 'Questions ITIL de l\'examen 3',
+          questions: exam3,
+        },
+        {
+          id: 'exam4',
+          name: 'Examen 4',
+          description: 'Questions ITIL de l\'examen 4',
+          questions: exam4,
         },
       ],
     },
